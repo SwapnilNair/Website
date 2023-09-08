@@ -1,0 +1,27 @@
+{{ define "main" }}
+  {{ with site.GetPage "homepage" }}
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-8 ">
+          <h2 class="h2 mb-6 text-center">{{ .Title }}</h1>
+        </div>
+      </div>
+    </div>
+   
+    {{ partial "image" (dict "Src" .Params.image "Alt" .Title "Class" "mx-auto mb-6" "Size" "850x850") }}
+    <br/>
+    <br/>
+
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-8 ">
+          <div class="content mb-10 text-center">{{ .Content }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {{ end }}
+{{ end }}
